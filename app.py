@@ -102,7 +102,7 @@ pertanyaan = {
     "PSS7" : "7. Dalam sebulan terakhir seberapa sering Anda mampu mengendalikan hal-hal yang menjengkelkan dalam hidup Anda?",
     "PSS8" : "8. Dalam sebulan terakhir seberapa sering Anda merasa mampu mengendalikan permasalahan Anda?",
     "PSS9" : "9. Dalam sebulan terakhir seberapa sering Anda marah karena hal-hal yang terjadi di luar kendali Anda?",
-    "PSS10": "10. Dalam sebulan terakhirsSeberapa sering Anda merasa tidak mampu menyelesaikan permasalahan yang menumpuk?",
+    "PSS10": "10. Dalam sebulan terakhir seberapa sering Anda merasa tidak mampu menyelesaikan permasalahan yang menumpuk?",
 }
 
 label_skala = {0: "0 – Tidak Pernah", 1: "1 – Hampir Tidak Pernah",
