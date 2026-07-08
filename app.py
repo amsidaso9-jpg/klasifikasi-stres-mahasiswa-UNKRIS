@@ -258,7 +258,7 @@ if tombol:
         **Saran:**
         - Segera hubungi layanan konseling atau psikolog kampus UNKRIS
         - Bicarakan kondisi Anda dengan dosen pembimbing atau dosen wali
-        - Prioritaskan istirahat — produktivitas tidak akan optimal dalam kondisi stres tinggi
+        - Prioritaskan istirahat karena produktivitas tidak akan optimal dalam kondisi stres tinggi
         - Jangan ragu untuk meminta bantuan; mencari bantuan adalah tanda keberanian
         """)
 
@@ -283,7 +283,7 @@ if tombol:
         - SMOTE diterapkan di dalam Pipeline selama pelatihan untuk menangani ketidakseimbangan
           kelas, tanpa memengaruhi proses prediksi data baru ini
         - Input dinormalisasi menggunakan **Min-Max Scaler** yang sama dengan proses pelatihan
-        - Aplikasi ini merupakan **Proof of Concept** — bukan pengganti diagnosis klinis profesional
+        - Aplikasi ini merupakan **Proof of Concept** bukan pengganti diagnosis klinis profesional
         """)
 
 # =====================================================================
