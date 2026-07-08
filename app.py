@@ -259,7 +259,7 @@ if tombol:
         - Segera hubungi layanan konseling atau psikolog kampus UNKRIS
         - Bicarakan kondisi Anda dengan dosen pembimbing atau dosen wali
         - Prioritaskan istirahat karena produktivitas tidak akan optimal dalam kondisi stres tinggi
-        - Jangan ragu untuk meminta bantuan; mencari bantuan adalah tanda keberanian
+        - Jangan ragu untuk meminta bantuan, mencari bantuan adalah tanda keberanian
         """)
 
     st.write("")
