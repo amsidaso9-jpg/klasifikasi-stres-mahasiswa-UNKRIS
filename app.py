@@ -66,11 +66,10 @@ label_map = mapping['label_map']   # {0: 'Rendah', 1: 'Sedang', 2: 'Tinggi'}
 # encode_aktivitas() di Colab adalah fungsi if/elif, bukan dictionary sederhana,
 # sehingga logikanya ditulis ulang langsung di sini (bukan dari mapping_encoding.pkl)
 aktivitas_map = {
-    'Tidak Ada'        : 0,
-    'Tidur'            : 0,
-    'Organisasi'       : 1,
-    'Kerja Part-time'  : 2,
-    'Kerja Full-Time'  : 3
+    'Tidak Ada'       : 0,
+    'Organisasi'      : 1,
+    'Kerja Part-time' : 2,
+    'Lainnya'         : 3   # mencakup kerja full-time, dll (sesuai isian "Other" di form asli)
 }
 
 # =====================================================================
