@@ -93,16 +93,16 @@ with st.expander("📖 Panduan Pengisian Skala PSS-10"):
 st.subheader("1️⃣ Kuesioner PSS-10")
 
 pertanyaan = {
-    "PSS1" : "1. Seberapa sering Anda merasa kecewa karena sesuatu yang terjadi secara tidak terduga?",
-    "PSS2" : "2. Seberapa sering Anda merasa tidak mampu mengendalikan hal-hal penting dalam hidup Anda?",
-    "PSS3" : "3. Seberapa sering Anda merasa gelisah dan stres?",
-    "PSS4" : "4. Seberapa sering Anda merasa percaya diri dengan kemampuan Anda menyelesaikan masalah pribadi?",
-    "PSS5" : "5. Seberapa sering Anda merasa segala sesuatu berjalan sesuai keinginan Anda?",
-    "PSS6" : "6. Seberapa sering Anda merasa tidak bisa mengatasi hal-hal yang harus Anda lakukan?",
-    "PSS7" : "7. Seberapa sering Anda mampu mengendalikan hal-hal yang menjengkelkan dalam hidup Anda?",
-    "PSS8" : "8. Seberapa sering Anda merasa mampu mengendalikan permasalahan Anda?",
-    "PSS9" : "9. Seberapa sering Anda marah karena hal-hal yang terjadi di luar kendali Anda?",
-    "PSS10": "10. Seberapa sering Anda merasa tidak mampu menyelesaikan permasalahan yang menumpuk?",
+    "PSS1" : "1. Dalam Sebulan Terakhir Seberapa sering Anda merasa kecewa karena sesuatu yang terjadi secara tidak terduga?",
+    "PSS2" : "2. Dalam Sebulan Terakhir Seberapa sering Anda merasa tidak mampu mengendalikan hal-hal penting dalam hidup Anda?",
+    "PSS3" : "3. Dalam Sebulan Terakhir Seberapa sering Anda merasa gelisah dan stres?",
+    "PSS4" : "4. Dalam Sebulan Terakhir Seberapa sering Anda merasa percaya diri dengan kemampuan Anda menyelesaikan masalah pribadi?",
+    "PSS5" : "5. Dalam Sebulan Terakhir Seberapa sering Anda merasa segala sesuatu berjalan sesuai keinginan Anda?",
+    "PSS6" : "6. Dalam Sebulan Terakhir Seberapa sering Anda merasa tidak bisa mengatasi hal-hal yang harus Anda lakukan?",
+    "PSS7" : "7. Dalam Sebulan Terakhir Seberapa sering Anda mampu mengendalikan hal-hal yang menjengkelkan dalam hidup Anda?",
+    "PSS8" : "8. Dalam Sebulan Terakhir Seberapa sering Anda merasa mampu mengendalikan permasalahan Anda?",
+    "PSS9" : "9. Dalam SEbulan Terakhir Seberapa sering Anda marah karena hal-hal yang terjadi di luar kendali Anda?",
+    "PSS10": "10. Dalam Sebulan Terakhir Seberapa sering Anda merasa tidak mampu menyelesaikan permasalahan yang menumpuk?",
 }
 
 label_skala = {0: "0 – Tidak Pernah", 1: "1 – Hampir Tidak Pernah",
