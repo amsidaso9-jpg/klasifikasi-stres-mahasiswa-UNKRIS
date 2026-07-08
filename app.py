@@ -69,7 +69,7 @@ aktivitas_map = {
     'Tidak Ada'       : 0,
     'Organisasi'      : 1,
     'Kerja Part-time' : 2,
-    'Lainnya'         : 3   # mencakup kerja full-time, dll (sesuai isian "Other" di form asli)
+    'Lainnya'         : 3   
 }
 
 # =====================================================================
