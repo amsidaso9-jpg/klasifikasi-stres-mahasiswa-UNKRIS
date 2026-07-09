@@ -43,7 +43,17 @@ model, scaler, mapping, error_msg = load_semua_file()
 # HEADER APLIKASI
 # =====================================================================
 st.title("🧠 Aplikasi Klasifikasi Tingkat Stres Mahasiswa")
-st.markdown("**Universitas Krisnadwipayana Jakarta**")
+
+col_logo, col_nama = st.columns([1, 8])
+with col_logo:
+    st.image("logo_unkris.png", width=55)
+with col_nama:
+    st.markdown(
+        "<div style='display:flex; align-items:center; height:55px; margin:0;'>"
+        "<strong>Universitas Krisnadwipayana Jakarta</strong></div>",
+        unsafe_allow_html=True
+    )
+
 st.write("Isi kuesioner di bawah ini sesuai kondisi yang Anda rasakan **dalam satu bulan terakhir**.")
 
 if error_msg:
@@ -57,19 +67,16 @@ st.write("---")
 # =====================================================================
 # ENCODING MAPPING (sesuai proses training di Colab)
 # =====================================================================
-# ipk_map, tidur_map, olah_map diambil dari mapping_encoding.pkl (Cell 15)
 ipk_map   = mapping['ipk_map']     # {'2.50 - 2.99': 1, '3.00 - 3.49': 2, '3.50 - 4.00': 3}
 tidur_map = mapping['tidur_map']   # {'< 4 Jam': 1, '4 - 5 Jam': 2, '6 - 7 Jam': 3, '> 7 Jam': 4}
 olah_map  = mapping['olah_map']    # {'Tidak Pernah': 0, '1 - 2 Kali': 1, '3 - 4 Kali': 2, 'Setiap Hari': 3}
 label_map = mapping['label_map']   # {0: 'Rendah', 1: 'Sedang', 2: 'Tinggi'}
 
-# encode_aktivitas() di Colab adalah fungsi if/elif, bukan dictionary sederhana,
-# sehingga logikanya ditulis ulang langsung di sini (bukan dari mapping_encoding.pkl)
 aktivitas_map = {
     'Tidak Ada'       : 0,
     'Organisasi'      : 1,
     'Kerja Part-time' : 2,
-    'Lainnya'         : 3   
+    'Lainnya'         : 3
 }
 
 # =====================================================================
@@ -173,43 +180,32 @@ with col2:
     tombol = st.button("🔍 Cek Tingkat Stres Saya", type="primary", use_container_width=True)
 
 if tombol:
-    # --- 1. Kumpulkan & reverse scoring PSS-10 ---
     pss_values = [jawaban_pss[f"PSS{i}"] for i in range(1, 11)]
     pss_reversed = pss_values.copy()
-    for idx in [3, 4, 6, 7]:   # PSS4, PSS5, PSS7, PSS8 (index ke-4,5,7,8 -> 0-based 3,4,6,7)
+    for idx in [3, 4, 6, 7]:
         pss_reversed[idx] = 4 - pss_reversed[idx]
 
     total_skor = sum(pss_reversed)
 
-    # --- 2. Encoding variabel konteks ---
     ipk_enc       = ipk_map[ipk_pilihan]
     aktivitas_enc = aktivitas_map[aktivitas_pilihan]
     tidur_enc     = tidur_map[tidur_pilihan]
     olahraga_enc  = olah_map[olahraga_pilihan]
 
-    # --- 3. Encoding sumber stres (binary 0/1) ---
     stres_skripsi_enc  = int(stres_skripsi)
     stres_keuangan_enc = int(stres_keuangan)
     stres_akademik_enc = int(stres_akademik)
 
-    # --- 4. Susun 17 fitur SESUAI URUTAN SAAT TRAINING ---
-    # Urutan wajib: 10 PSS (reversed) + IPK + Aktivitas + Tidur + Olahraga
-    #               + Stres_Skripsi + Stres_Keuangan + Stres_Akademik
     input_lengkap = np.array([pss_reversed + [
         ipk_enc, aktivitas_enc, tidur_enc, olahraga_enc,
         stres_skripsi_enc, stres_keuangan_enc, stres_akademik_enc
     ]])
 
-    # --- 5. Normalisasi dengan scaler yang sama dari Colab ---
     input_scaled = scaler.transform(input_lengkap)
 
-    # --- 6. Prediksi ---
     prediksi     = model.predict(input_scaled)[0]
     probabilitas = model.predict_proba(input_scaled)[0]
 
-    # =====================================================================
-    # TAMPILKAN HASIL
-    # =====================================================================
     st.subheader("📊 Hasil Analisis Tingkat Stres")
 
     col_a, col_b = st.columns(2)
